@@ -1,8 +1,9 @@
 # Drluffy
-
+<div align="center">
+  <img src="./image.svg" alt="科技感图标" width="128" height="128" />
+</div>
 `Drluffy` 是一个可部署到 GitHub Pages 的未来科技风个人网站，基于原生 `HTML/CSS/JavaScript`。
 
-![Icon](image.svg)
 ## 功能
 
 - 科技感背景 + 鼠标跟随粒子特效
