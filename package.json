@@ -1,0 +1,19 @@
+{
+  "name": "drluffy",
+  "private": true,
+  "version": "1.0.0",
+  "bin": {
+    "Luffy": "./scripts/luffy.js",
+    "luffy": "./scripts/luffy.js",
+    "drluffy": "./scripts/luffy.js"
+  },
+  "scripts": {
+    "build:content": "node scripts/build-content.js",
+    "luffy": "node scripts/luffy.js",
+    "run": "node scripts/luffy.js run",
+    "create-article": "node scripts/luffy.js create-article",
+    "create-page": "node scripts/luffy.js create-page",
+    "delete-page": "node scripts/luffy.js delete-page",
+    "install:all": "node scripts/luffy.js install"
+  }
+}

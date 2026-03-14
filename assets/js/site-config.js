@@ -1,0 +1,85 @@
+const defaultConfig = {
+  theme: "night",
+  enableExploreGate: true,
+  entry: {
+    titleTypeSpeedMs: 38,
+    subtitleTypeSpeedMs: 18,
+    subtitleDelayMs: 180,
+    blinkMinOpacity: 0.45,
+    blinkGlowAlpha: 0.55,
+    blinkGlowSizePx: 10,
+    leaveDurationMs: 430,
+  },
+  enableIdleSlideshow: true,
+  idleTimeoutMs: 30000,
+  slideshowIntervalMs: 4500,
+  particles: {
+    dayDesktop: 260,
+    nightDesktop: 180,
+    dayMobile: 110,
+    nightMobile: 70,
+  },
+  wallpaper: {
+    day: "",
+    night: "",
+    default: "",
+  },
+  gallery: [],
+  greetings: ["Hi", "Hello"],
+  cat: {
+    svg: "",
+  },
+  visits: {
+    enabled: true,
+    provider: "countapi",
+    namespace: "drluffy",
+    key: "site",
+  },
+};
+
+let configPromise = null;
+
+function mergeConfig(source = {}) {
+  return {
+    ...defaultConfig,
+    ...source,
+    wallpaper: {
+      ...defaultConfig.wallpaper,
+      ...(source.wallpaper || {}),
+    },
+    gallery: Array.isArray(source.gallery) ? source.gallery : defaultConfig.gallery,
+    greetings: Array.isArray(source.greetings) && source.greetings.length > 0 ? source.greetings : defaultConfig.greetings,
+    cat: {
+      ...defaultConfig.cat,
+      ...(source.cat || {}),
+    },
+    entry: {
+      ...defaultConfig.entry,
+      ...(source.entry || {}),
+    },
+    visits: {
+      ...defaultConfig.visits,
+      ...(source.visits || {}),
+    },
+    particles: {
+      ...defaultConfig.particles,
+      ...(source.particles || {}),
+    },
+  };
+}
+
+export async function loadSiteConfig() {
+  if (!configPromise) {
+    configPromise = fetch("/data/site-config.json", { cache: "no-store" })
+      .then((response) => {
+        if (!response.ok) {
+          return defaultConfig;
+        }
+        return response.json();
+      })
+      .then((json) => mergeConfig(json))
+      .catch(() => defaultConfig);
+  }
+
+  return configPromise;
+}

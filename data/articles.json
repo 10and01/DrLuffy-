@@ -1,0 +1,41 @@
+[
+  {
+    "slug": "first-signal",
+    "title": "First Signal: Designing Calm Interactive Systems",
+    "date": "2026-03-14",
+    "tags": [
+      "Design",
+      "Interaction",
+      "Web"
+    ],
+    "excerpt": "How to build rich interactions without turning your site into visual noise.",
+    "cover": "/assets/images/covers/first-signal.jpg",
+    "readingTime": 1
+  },
+  {
+    "slug": "markdown-pipeline",
+    "title": "Markdown Pipeline For Static Personal Sites",
+    "date": "2026-03-10",
+    "tags": [
+      "Markdown",
+      "Node",
+      "Static Site"
+    ],
+    "excerpt": "A minimal content pipeline that keeps writing simple and deployment predictable.",
+    "cover": "/assets/images/covers/markdown-pipeline.jpg",
+    "readingTime": 1
+  },
+  {
+    "slug": "scroll-cat-story",
+    "title": "The Scroll Cat: Micro-Narrative In UI",
+    "date": "2026-03-01",
+    "tags": [
+      "Animation",
+      "UX",
+      "1"
+    ],
+    "excerpt": "Using a playful cat and pulley interaction to reward long-form reading.",
+    "cover": "/assets/images/covers/scroll-cat.jpg",
+    "readingTime": 1
+  }
+]

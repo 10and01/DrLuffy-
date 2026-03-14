@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    try {
+      if (sessionStorage.getItem("drluffy.exploreSessionSeen") !== "1") {
+        document.documentElement.classList.add("drluffy-gate-pending");
+      }
+    } catch {
+      document.documentElement.classList.add("drluffy-gate-pending");
+    }
+  </script>
+  <title>About | Drluffy</title>
+  <link rel="stylesheet" href="/assets/css/tokens.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body data-page="about">
+  <canvas id="particle-canvas" aria-hidden="true"></canvas>
+  <div class="wallpaper-layer" id="wallpaper-layer" aria-hidden="true"></div>
+
+  <section id="entry-gate" class="entry-gate" aria-hidden="false">
+    <div class="entry-gate-panel glass-panel">
+      <p class="eyebrow entry-status" data-i18n="entry_label">System Ready</p>
+      <h1 class="entry-title" data-i18n="entry_title">Drluffy</h1>
+      <p class="subtitle entry-subtitle" data-i18n="entry_subtitle">A futuristic personal space is waiting behind this portal.</p>
+      <button id="explore-button" class="btn btn-primary" data-i18n="entry_explore">Explore</button>
+    </div>
+  </section>
+
+  <header class="site-header" id="site-header">
+    <div class="brand">Drluffy</div>
+    <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+      <a href="/index.html" data-i18n="nav_home">Home</a>
+      <a href="/about.html" class="active" data-i18n="nav_about">About</a>
+      <a href="/articles.html" data-i18n="nav_articles">Articles</a>
+    </nav>
+    <div class="header-actions">
+      <label class="theme-switch" for="theme-toggle" data-i18n-title="theme_toggle_title">
+        <span class="theme-icon" aria-hidden="true">&#9728;</span>
+        <input id="theme-toggle" class="theme-switch-input" type="checkbox" role="switch">
+        <span class="theme-switch-track"><span class="theme-switch-thumb"></span></span>
+        <span class="theme-icon" aria-hidden="true">&#9790;</span>
+      </label>
+      <button id="lang-toggle" class="btn btn-secondary lang-toggle" data-i18n="lang_toggle">中文</button>
+    </div>
+  </header>
+
+  <main class="page-shell">
+    <section class="glass-panel profile-card">
+      <h1 data-i18n="about_title">About Me</h1>
+      <p data-i18n="about_desc">Builder, writer, and explorer focused on resilient software and delightful interfaces.</p>
+      <ul class="chip-list">
+        <li>Frontend Systems</li>
+        <li>Developer Tools</li>
+        <li>AI Workflows</li>
+      </ul>
+    </section>
+
+    <section class="glass-panel about-media">
+      <img class="about-photo" src="/assets/images/about-photo.jpg" alt="Profile photo">
+      <div class="social-row" aria-label="Social links">
+        <a class="social-link" href="https://x.com" target="_blank" rel="noopener noreferrer" title="X" aria-label="X">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M3 3h4.7l4.3 6 5.3-6H21l-7.4 8.3L21.8 21h-4.7l-5.2-7.3-6.4 7.3H2l8.3-9.4z"/></svg>
+        </a>
+        <a class="social-link" href="https://t.me" target="_blank" rel="noopener noreferrer" title="Telegram" aria-label="Telegram">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M21.9 3.3 18.5 20c-.3 1.2-.9 1.5-1.9 1l-5.1-3.7-2.4 2.3c-.3.3-.6.6-1.1.6l.4-5.3 9.8-8.8c.4-.3-.1-.5-.6-.2L5.4 13.3.3 11.7c-1.1-.3-1.1-1.1.2-1.6L20.2 2.6c.9-.3 1.8.2 1.7.7z"/></svg>
+        </a>
+        <a class="social-link" href="mailto:hello@example.com" title="Email" aria-label="Email">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M3 5h18a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2zm0 2v.5l9 5.5 9-5.5V7H3zm18 10V9.8l-8.5 5.2a1 1 0 0 1-1 0L3 9.8V17h18z"/></svg>
+        </a>
+        <a class="social-link" href="https://github.com" target="_blank" rel="noopener noreferrer" title="GitHub" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.2.8-.6v-2.1c-3.3.8-4-1.4-4-1.4-.5-1.4-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.9 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6a4.7 4.7 0 0 1 1.2-3.2 4.3 4.3 0 0 1 .1-3.1s1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0c2.2-1.5 3.3-1.2 3.3-1.2a4.3 4.3 0 0 1 .1 3.1 4.7 4.7 0 0 1 1.2 3.2c0 4.7-2.9 5.7-5.6 6 .4.3.8 1 .8 2.1v3.1c0 .4.2.7.8.6A12 12 0 0 0 12 .5z"/></svg>
+        </a>
+      </div>
+    </section>
+
+    <section class="glass-panel">
+      <h2 data-i18n="about_timeline">Timeline</h2>
+      <ol class="timeline">
+        <li><span>2022</span><p data-i18n="about_tl_2022">Started building interactive web experiences.</p></li>
+        <li><span>2024</span><p data-i18n="about_tl_2024">Published technical articles and open-source tooling.</p></li>
+        <li><span>2026</span><p data-i18n="about_tl_2026">Launched this futuristic personal website.</p></li>
+      </ol>
+    </section>
+  </main>
+
+  <footer class="site-footer glass-panel" aria-label="Site statistics">
+    <span data-i18n="footer_visits">Visits</span>
+    <strong id="visit-count">-</strong>
+  </footer>
+
+  <aside id="cat-widget" class="cat-widget" aria-label="Scroll assistant cat">
+    <div class="pulley"></div>
+    <div class="rope" id="cat-rope"></div>
+    <div class="food" id="cat-food"></div>
+    <img class="cat-svg" id="cat-svg" alt="">
+    <div class="cat" id="cat-character"><span class="cat-ears"></span><span class="cat-eyes"></span></div>
+    <div class="cat-bubble" id="cat-bubble" aria-live="polite"></div>
+  </aside>
+
+  <section class="idle-overlay" id="idle-overlay" aria-hidden="true">
+    <div class="idle-content glass-panel">
+      <header>
+        <h2 data-i18n="slideshow_title">Photo Showcase</h2>
+        <div class="inline-actions">
+          <button id="slideshow-prev" class="btn btn-secondary" data-i18n="slideshow_prev">Prev</button>
+          <button id="slideshow-next" class="btn btn-secondary" data-i18n="slideshow_next">Next</button>
+          <button id="exit-slideshow" class="btn btn-primary" data-i18n="slideshow_exit">Exit</button>
+        </div>
+      </header>
+      <div id="slideshow-stage" class="slideshow-stage">
+        <div id="slideshow-frame" class="slideshow-frame">
+          <img id="slideshow-image" class="slideshow-image" alt="">
+        </div>
+      </div>
+      <p id="slideshow-caption" class="slideshow-caption"></p>
+      <p class="slideshow-hint" data-i18n="slideshow_hint">Click photo to zoom. Swipe or use the controls to browse.</p>
+    </div>
+  </section>
+
+  <section class="lightbox" id="lightbox" aria-hidden="true">
+    <button id="lightbox-close" class="lightbox-close" type="button" data-i18n="lightbox_close">Close</button>
+    <img id="lightbox-image" class="lightbox-image" alt="">
+  </section>
+
+  <script type="module" src="/assets/js/main.js"></script>
+</body>
+</html>
